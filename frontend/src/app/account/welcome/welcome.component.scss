@@ -1,0 +1,19 @@
+.t-wrapper{
+    .f-form{        
+        /* Center vertically and horizontally */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+    .wrap-text{
+        margin-bottom: 15px;
+        span{
+            font-weight: 600;
+            font-size: 24px;
+        }
+        p{
+            color: #666666;
+        }
+    }
+}

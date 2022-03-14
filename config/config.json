@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root@123",
+    "database": "qrbee",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "qrb",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "qrb",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

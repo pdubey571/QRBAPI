@@ -1,0 +1,48 @@
+<div class="t-wrapper">
+    <div class="t-header">
+        <div class="t-header-inner">
+            <button class="btn-back">
+                <img src="./assets/images/backbtn.svg" alt="">
+            </button>
+            <h6>covid pass</h6>
+            <span>contact info</span>
+        </div>
+    </div>
+    <div class="t-body">
+        <div class="signup-content">
+            <p class="short-desc">help us in tracing the virus by filling in the details below.</p>
+            <div class="f-form">
+                <form novalidate>
+    
+                    <div class="f-row">
+                        <div class="f-50">
+                            <div class="f-wrap">
+                                <input type="text" class="f-field form-control" placeholder="full name" value="">
+                            </div>
+                        </div>
+                        <div class="f-50">
+                            <div class="f-wrap">
+                                <input type="text" class="f-field form-control" placeholder="phone number" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f-row">
+                        <div class="f-100">
+                            <div class="f-wrap">
+                                <input type="text" class="f-field form-control" placeholder="home address" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sp-row">
+                        <div class="sp-col col100">
+                            <button type="button" class="btn btn-solid btn-dark">next</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="signup-footer">
+            <a [routerLink]="[ '/login' ]">login</a>
+        </div>
+    </div>
+</div>

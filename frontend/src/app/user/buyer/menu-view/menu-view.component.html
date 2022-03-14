@@ -1,0 +1,427 @@
+<div class="landing has-fixed-menu">
+    <div class="fixed-menu">
+        <div class="fz-menu">
+            <div class="fz-menu-inner">
+                <div class="fz-menu-left">
+                    <h3 class="business-name">business name</h3>
+                </div>
+                <div class="fz-menu-right">
+                    <div class="fz-menu-options">
+                        <div class="fz-menu-option">
+                            <button class="btn-search" (click)="toggleSearch();">
+                                <img src="./assets/images/search.svg" alt="">
+                            </button>
+                            <div class="search-box" [ngClass]="{'active-search': activeSearch}">
+                                <input type="text" name="search" id="searchId">
+                                <button class="btn-clear" (click)="toggleSearch();">
+                                    <img src="./assets/images/search-clear.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="fz-menu-option">
+                            <button class="btn-hamburger" (click)="toggleMenu()">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button> 
+                            <span class="menu-overlay" *ngIf="openMenu" (click)="toggleMenu()"></span>
+                            <div class="users-menu" [ngClass]="{'active-menu': openMenu}">
+                                <div class="user-menu-header">
+                                    <div class="menu-header">                                        
+                                       <!--  <h4>Robert Fox</h4> -->
+                                        <p>(+1) 541-754-3010</p>
+                                        <span class="user-img">
+                                            <img src="./assets/images/user-img.png" alt="">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="user-menu-body">
+                                    <div class="user-inner-menu">
+                                        <h5 class="user-menu-heading">CUSTOMER OPTIONS</h5>
+                                        <ul class="user-menu-options">
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">business info</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/info.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">covid pass</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/pass.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">menu</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/venu.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                           <!--  <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">history</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/history.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                  <!--   <div class="user-inner-menu">
+                                        <h5 class="user-menu-heading">ADMIN OPTIONS</h5>
+                                        <ul class="user-menu-options">
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">menu editor</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/editor.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">covid pass manager</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/pass-manager.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                                <div class="sp-row">
+                                    <div class="sp-col col100">
+                                        <a  class="btn btn-solid btn-dark btnheight">$45/mo</a>
+                                    </div>
+                                </div>
+                                <div class="user-menu-footer">
+                                    <ul class="user-menu-options">
+                                        <li>
+                                            <a [routerLink]="[ '/path' ]">
+                                                <h4 class="um-title">logout</h4>
+                                                <span class="um-icon">
+                                                    <img src="./assets/images/logout.svg" alt="">
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <p class="poweredby">powered by <span><img src="./assets/images/qrb.svg" alt=""></span></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-nav-wrapper m-nav">
+            <ul class="menu-nav">
+                <li>
+                    <button class="btn-nav" (click)= toggleHelper($event)>drinks<img src="./assets/images/right-arrow.svg" alt="" /></button>
+                    <ul class="menu-sub-nav">
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/coffee' ]">coffee</a>
+                        </li>
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/juice' ]">juice</a>
+                        </li>
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/soda' ]">soda</a>
+                        </li>
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/tea' ]">tea</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="btn-nav" (click)= toggleHelper($event)>main menu<img src="./assets/images/right-arrow.svg" alt="" ></button>
+                    <ul class="menu-sub-nav">
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/coffee' ]">coffee</a>
+                        </li>
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/juice' ]">juice</a>
+                        </li>
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/soda' ]">soda</a>
+                        </li>
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/tea' ]">tea</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="btn-nav" (click)= toggleHelper($event)>lunch<img src="./assets/images/right-arrow.svg" alt="" ></button>
+                    <ul class="menu-sub-nav">
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/coffee' ]">coffee</a>
+                        </li>
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/juice' ]">juice</a>
+                        </li>
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/soda' ]">soda</a>
+                        </li>
+                        <li>
+                            <a class="m-nav" [routerLink]="[ '/tea' ]">tea</a>
+                        </li>
+                    </ul>
+                </li>                
+            </ul>
+        </div>
+    </div>
+    <div class="m-content">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a [routerLink]="[ '/path' ]">drinks</a>
+            </li>
+            <li class="breadcrumb-item">
+                coffee
+            </li>
+        </ul>
+        <div class="m-body">
+            <div class="m-accordians">
+                <ngb-accordion #acc="ngbAccordion" [closeOthers]="true">
+                    <ngb-panel id="accordian01">
+                        <ng-template ngbPanelTitle>
+                            <div class="m-cat">
+                                <div class="m-cat-head">
+                                    <div class="cat-left">
+                                        <span class="cat-icon">
+                                            <img src="./assets/images/gallery004.jpg" alt="">
+                                        </span>
+                                    </div>                               
+                                    <div class="cat-right">
+                                        <div class="cat-head">
+                                            <h4>lox & bagel</h4>
+                                            <span class="price">$8.49</span>
+                                        </div>
+                                        <p>Viverra nisl, parturient felis vel eget adipiscing felis erat condimentum. Arcu ornare se parturient felis vel eget adipiscing felis erat condimentum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <ngx-slick-carousel class="carousel" 
+                                #slickModal="slick-carousel" 
+                                [config]="slideConfig" 
+                                (init)="slickInit($event)"
+                                (breakpoint)="breakpoint($event)"
+                                (afterChange)="afterChange($event)"
+                                (beforeChange)="beforeChange($event)">
+                                <div ngxSlickItem class="slide">
+                                    <div class="sl-table-group">
+                                        <div class="sl-table-wrap">
+                                            <div class="sl-table-header">
+                                                <h4>milk options</h4>
+                                            </div>
+                                            <div class="sl-table-table">
+                                                <table class="sl-table">
+                                                    <tr>
+                                                        <td>regular milk</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>coconut milk</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>soy milk</td>
+                                                        <td>+$1</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="sl-table-wrap">
+                                            <div class="sl-table-header">
+                                                <h4>extras options</h4>
+                                            </div>
+                                            <div class="sl-table-table">
+                                                <table class="sl-table">
+                                                    <tr>
+                                                        <td>milk</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>sugar</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                                    <div class="sl-img">
+                                        <img src="{{ slide.img }}" alt="" width="100%">
+                                    </div>
+                                </div>
+                            </ngx-slick-carousel>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="accordian02">
+                        <ng-template ngbPanelTitle>
+                            <div class="m-cat">
+                                <div class="m-cat-head">
+                                    <div class="cat-left">
+                                        <span class="cat-icon">
+                                            <img src="./assets/images/gallery004.jpg" alt="">
+                                        </span>
+                                    </div>                               
+                                    <div class="cat-right">
+                                        <div class="cat-head">
+                                            <h4>lox & bagel</h4>
+                                            <span class="price">$8.49</span>
+                                        </div>
+                                        <p>Viverra nisl, parturient felis vel eget adipiscing felis erat condimentum. Arcu ornare se parturient felis vel eget adipiscing felis erat condimentum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <ngx-slick-carousel class="carousel" 
+                                #slickModal="slick-carousel" 
+                                [config]="slideConfig" 
+                                (init)="slickInit($event)"
+                                (breakpoint)="breakpoint($event)"
+                                (afterChange)="afterChange($event)"
+                                (beforeChange)="beforeChange($event)">
+                                <div ngxSlickItem class="slide">
+                                    <div class="sl-table-group">
+                                        <div class="sl-table-wrap">
+                                            <div class="sl-table-header">
+                                                <h4>milk options</h4>
+                                            </div>
+                                            <div class="sl-table-table">
+                                                <table class="sl-table">
+                                                    <tr>
+                                                        <td>regular milk</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>coconut milk</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>soy milk</td>
+                                                        <td>+$1</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="sl-table-wrap">
+                                            <div class="sl-table-header">
+                                                <h4>extras options</h4>
+                                            </div>
+                                            <div class="sl-table-table">
+                                                <table class="sl-table">
+                                                    <tr>
+                                                        <td>milk</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>sugar</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                                    <div class="sl-img">
+                                        <img src="{{ slide.img }}" alt="" width="100%">
+                                    </div>
+                                </div>
+                            </ngx-slick-carousel>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="accordian03">
+                        <ng-template ngbPanelTitle>
+                            <div class="m-cat">
+                                <div class="m-cat-head">
+                                    <div class="cat-left">
+                                        <span class="cat-icon">
+                                            <img src="./assets/images/gallery004.jpg" alt="">
+                                        </span>
+                                    </div>                               
+                                    <div class="cat-right">
+                                        <div class="cat-head">
+                                            <h4>lox & bagel</h4>
+                                            <span class="price">$8.49</span>
+                                        </div>
+                                        <p>Viverra nisl, parturient felis vel eget adipiscing felis erat condimentum. Arcu ornare se parturient felis vel eget adipiscing felis erat condimentum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <ngx-slick-carousel class="carousel" 
+                                #slickModal="slick-carousel" 
+                                [config]="slideConfig" 
+                                (init)="slickInit($event)"
+                                (breakpoint)="breakpoint($event)"
+                                (afterChange)="afterChange($event)"
+                                (beforeChange)="beforeChange($event)">
+                                <div ngxSlickItem class="slide">
+                                    <div class="sl-table-group">
+                                        <div class="sl-table-wrap">
+                                            <div class="sl-table-header">
+                                                <h4>milk options</h4>
+                                            </div>
+                                            <div class="sl-table-table">
+                                                <table class="sl-table">
+                                                    <tr>
+                                                        <td>regular milk</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>coconut milk</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>soy milk</td>
+                                                        <td>+$1</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="sl-table-wrap">
+                                            <div class="sl-table-header">
+                                                <h4>extras options</h4>
+                                            </div>
+                                            <div class="sl-table-table">
+                                                <table class="sl-table">
+                                                    <tr>
+                                                        <td>milk</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>sugar</td>
+                                                        <td>free</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                                    <div class="sl-img">
+                                        <img src="{{ slide.img }}" alt="" width="100%">
+                                    </div>
+                                </div>
+                            </ngx-slick-carousel>
+                        </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+            </div>
+        </div>
+    </div>
+</div>

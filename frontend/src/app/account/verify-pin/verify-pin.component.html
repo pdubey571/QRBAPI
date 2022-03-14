@@ -1,0 +1,57 @@
+
+<div class="t-wrapper">
+    <div class="t-header">
+        <div class="t-header-inner">
+            <button class="btn-back">
+                <img src="./assets/images/backbtn.svg" alt="" [routerLink]="[ '/restaurantlogin' ]">
+            </button>
+        </div>
+    </div>
+    <div class="t-body">
+        <div class="signup-content scaled-content">
+            
+            <h4 class="big-heading">enter verification code</h4>
+            <div class="f-form">
+                <form novalidate>
+                    <div class="f-row">
+                        <div class="f-100">
+                            <div class="f-wrap">
+                                <div class="otp-inputs">
+                                    <label class="sm-label">enter the 4 digit number that we sent to</label>
+                                    <label class="sm-label">(+1)1-541-754-3010)</label>
+                                    <div class="opt-group">
+                                        <div class="opt-input">
+                                            <input type="text" maxlength="1" class="f-field form-control" placeholder="0" value="">
+                                        </div>
+                                        <div class="opt-input">
+                                            <input type="text" maxlength="1" class="f-field form-control" placeholder="0" value="">
+                                        </div>
+                                        <div class="opt-input">
+                                            <input type="text" maxlength="1" class="f-field form-control" placeholder="0" value="">
+                                        </div>
+                                        <div class="opt-input">
+                                            <input type="text" maxlength="1" class="f-field form-control" placeholder="0" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottombtn">
+                    <div class="sp-row">                        
+                        <div class="sp-col col100">
+                            <button type="button" class="btn btn-solid btn-dark" (click)="btnClick('C');">verify</button>
+                        </div>
+                    </div>
+                    <div class="sp-row">                        
+                        <div class="sp-col col100" style="text-align: center;">
+                        <span style="text-align: center;"> didn't received anything? <a href="#">resend code</a></span>   
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>

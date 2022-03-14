@@ -1,0 +1,117 @@
+<div class="t-wrapper">
+    <div class="t-header t-head-wrap">
+        <div class="t-head-l">
+            <div class="t-header-inner">
+                <button class="btn-back">
+                    <img src="./assets/images/backbtn.svg" alt="">
+                </button>
+                <h6>covid pass</h6>
+                <span>my qr</span>
+            </div>
+        </div>
+        <div class="t-head-r">
+            <button class="btn-hamburger" (click)="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button> 
+            <span class="menu-overlay" *ngIf="openMenu" (click)="toggleMenu()"></span>
+            <div class="users-menu" [ngClass]="{'active-menu': openMenu}">
+                <div class="user-menu-header">
+                    <div class="menu-header">
+                        <span class="user-img">
+                            <img src="./assets/images/user-img.png" alt="">
+                        </span>
+                        <h4>Robert Fox</h4>
+                        <p>robert.fox@gmail.com</p>
+                    </div>
+                </div>
+                <div class="user-menu-body">
+                    <div class="user-inner-menu">
+                        <h5 class="user-menu-heading">CUSTOMER OPTIONS</h5>
+                        <ul class="user-menu-options">
+                            <li>
+                                <a [routerLink]="[ '/path' ]">
+                                    <h4 class="um-title">business info</h4>
+                                    <span class="um-icon">
+                                        <img src="./assets/images/info.svg" alt="">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a [routerLink]="[ '/path' ]">
+                                    <h4 class="um-title">covid pass</h4>
+                                    <span class="um-icon">
+                                        <img src="./assets/images/pass.svg" alt="">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a [routerLink]="[ '/path' ]">
+                                    <h4 class="um-title">menu</h4>
+                                    <span class="um-icon">
+                                        <img src="./assets/images/venu.svg" alt="">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a [routerLink]="[ '/path' ]">
+                                    <h4 class="um-title">history</h4>
+                                    <span class="um-icon">
+                                        <img src="./assets/images/history.svg" alt="">
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-inner-menu">
+                        <h5 class="user-menu-heading">ADMIN OPTIONS</h5>
+                        <ul class="user-menu-options">
+                            <li>
+                                <a [routerLink]="[ '/path' ]">
+                                    <h4 class="um-title">menu editor</h4>
+                                    <span class="um-icon">
+                                        <img src="./assets/images/editor.svg" alt="">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a [routerLink]="[ '/path' ]">
+                                    <h4 class="um-title">covid pass manager</h4>
+                                    <span class="um-icon">
+                                        <img src="./assets/images/pass-manager.svg" alt="">
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="user-menu-footer">
+                    <ul class="user-menu-options">
+                        <li>
+                            <a [routerLink]="[ '/path' ]">
+                                <h4 class="um-title">logout</h4>
+                                <span class="um-icon">
+                                    <img src="./assets/images/logout.svg" alt="">
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <p class="poweredby">powered by <span><img src="./assets/images/qrb.svg" alt=""></span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="t-body">
+        <div class="signup-content flex-center">
+            <div class="barcode-wrap">
+                <span class="barcode">
+                    <img src="./assets/images/barcode.svg" alt="">
+                </span>
+                <h6>exampla@email.com</h6>
+            </div>
+        </div>
+    </div>
+</div>

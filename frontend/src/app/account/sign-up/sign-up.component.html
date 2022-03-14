@@ -1,0 +1,83 @@
+<div class="t-wrapper">
+    <div class="t-header">
+        <div class="t-header-inner p-l-0">
+            <h6>covid pass</h6>
+            <span>restaurant sign up</span>
+        </div>
+    </div>
+    <div class="t-body p-t-30 signup-wrap">
+        <div class="signup-content">
+            <div class="f-form">
+                <form novalidate>
+                    <div class="f-row">
+                        <div class="f-100">
+                            <div class="f-wrap">
+                                <div class="otp-phone">
+                                    <input type="text" class="f-field form-control" placeholder="phone number" value="">
+                                    <button class="btn-otp">send otp</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f-row">
+                        <div class="f-100">
+                            <div class="f-wrap">
+                                <div class="otp-inputs">
+                                    <div class="opt-group">
+                                        <div class="opt-input">
+                                            <input type="text" class="f-field form-control" value="">
+                                        </div>
+                                        <div class="opt-input">
+                                            <input type="text" class="f-field form-control" value="">
+                                        </div>
+                                        <div class="opt-input">
+                                            <input type="text" class="f-field form-control" value="">
+                                        </div>
+                                        <div class="opt-input">
+                                            <input type="text" class="f-field form-control" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="remaning-time">00:59</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sp-row">
+                        <div class="sp-col col100">
+                            <a [routerLink]="[ '/set-pin' ]"  class="btn btn-solid btn-dark">verify</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <ul class="social-login-btns">
+                <li>
+                    <button class="social-login-btn">
+                        <span>
+                            <img src="./assets/images/socialmail.svg" alt="">
+                        </span>
+                        <h6>continue with email</h6>
+                    </button>
+                </li>
+                <li>
+                    <button class="social-login-btn">
+                        <span>
+                            <img src="./assets/images/socialgoogle.svg" alt="">
+                        </span>
+                        <h6>continue with google</h6>
+                    </button>
+                </li>
+                <li>
+                    <button class="social-login-btn">
+                        <span>
+                            <img src="./assets/images/socialfacebook.svg" alt="">
+                        </span>
+                        <h6>continue with facebook</h6>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="signup-footer">
+            <a [routerLink]="[ '/login' ]">login</a>
+        </div>
+    </div>
+</div>

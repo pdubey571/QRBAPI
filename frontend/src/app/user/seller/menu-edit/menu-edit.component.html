@@ -1,0 +1,207 @@
+<div class="edit-profile">
+    <div class="edit-profile-header">
+        <div class="e-p-left">
+            <button class="btn-cancel">
+                <img src="./assets/images/cross.svg" alt="">
+            </button>
+            <h4>kalua pig omelet</h4>
+        </div>
+        <div class="e-p-right">
+            <button class="btn-correct">
+                <img src="./assets/images/tick-black.svg" alt="">
+            </button>
+        </div>
+    </div>
+    <div class="media-uploads m-media">
+        <ul class="media-list">
+            <li>
+                <div class="media-upload-area">
+                    <label for="media-upload-btn" class="media-upload-label">
+                        <img src="./assets/images/plus-outlined.svg" alt="">
+                        <input type="file" id="media-upload-btn">
+                    </label>
+                </div>
+            </li>
+            <li>
+                <span class="media-img">
+                    <img src="./assets/images/img001.png" alt="">
+                </span>
+            </li>
+            <li>
+                <span class="media-img">
+                    <img src="./assets/images/img002.png" alt="">
+                </span>
+            </li>
+            <li>
+                <span class="media-img">
+                    <img src="./assets/images/img003.png" alt="">
+                </span>
+            </li>
+        </ul>
+        <p class="grey-text">add images or videos to display the item to your customer.</p>
+    </div>
+    <div class="items-status">
+        <div class="status-option">
+            <label class="status" for="active">
+                <h4>active</h4>
+                <p>will be available in the menu.</p>
+                <input type="radio" name="currentSstatus" value="active" id="active" checked>
+                <span></span>
+            </label>
+        </div>
+        <div class="status-option">
+            <label class="status" for="inactive">
+                <h4>inactive</h4>
+                <p>will be hidden from the menu.</p>
+                <input type="radio" name="currentSstatus" value="inactive" id="inactive">
+                <span></span>
+            </label>
+        </div>
+        <div class="status-option">
+            <label class="status" for="trash">
+                <h4>trash<img src="./assets/images/trash.svg" class="d-icon" alt=""></h4>
+                <p>will hide and delete itself in 1 month</p>
+                <input type="radio" name="currentSstatus" value="trash" id="trash">
+                <span></span>
+            </label>
+        </div>
+    </div>
+    <div class="f-row">
+        <div class="f-wrap">
+            <input type="text" class="f-field form-control" placeholder="item name" value="kalua pig omelet">
+        </div>
+    </div>
+    <div class="f-row">
+        <div class="f-wrap">
+            <input type="text" class="f-field form-control" placeholder="price ($)" value="$8.49">
+        </div>
+    </div>
+    <div class="f-row">
+        <div class="f-wrap">
+            <textarea name="" class="f-area form-control">non, sed enim cras odio malesuada eu mauris amet. Justo imperdiet enim leo, nibh. Convallis sem sed lectus tortor aenean. Non massa vestibulum sem mauris.</textarea>
+        </div>
+    </div>
+    <h4 class="form-heading m-t-2 m-b-05">choose category</h4>
+    <div class="f-multi-row">
+        <div class="f-50">
+            <div class="f-wrap">
+                <div class="s-select bg-grey">
+                    <ng-select [searchable]="false" [clearable]="false" [items]="drinks" placeholder="main category">
+                        <ng-template ng-header-tmp>
+                            <button class="btn btn-sm btn-secondary">add new +</button>
+                        </ng-template>
+                        <ng-template ng-option-tmp let-item="item" let-index="index" bindLabel="label" bindValue="label">
+                            <div class="ng-option-wrap">
+                                <h6>{{item.label}}</h6>
+                                <div class="ng-option-actions">
+                                    <div class="ng-option-action">
+                                        <button class="btn-trans">
+                                            <img src="./assets/images/btn-edit.svg" alt="">
+                                        </button>
+                                    </div>                                    
+                                    <div class="ng-option-action">
+                                        <button class="btn-trans">
+                                            <img src="./assets/images/btn-delete.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-select>
+                </div>
+            </div>
+        </div>
+        <div class="f-50">
+            <div class="f-wrap">
+                <div class="s-select bg-grey">
+                    <ng-select [searchable]="false" [clearable]="false" [items]="categories" placeholder="sub category">
+                        <ng-template ng-header-tmp>
+                            <button class="btn btn-sm btn-secondary">add new +</button>
+                        </ng-template>
+                        <ng-template ng-option-tmp let-item="item" let-index="index">
+                            <div class="ng-option-wrap">
+                                <h6>{{item.label}}</h6>
+                                <div class="ng-option-actions">
+                                    <div class="ng-option-action">
+                                        <button class="btn-trans">
+                                            <img src="./assets/images/btn-edit.svg" alt="">
+                                        </button>
+                                    </div>                                    
+                                    <div class="ng-option-action">
+                                        <button class="btn-trans">
+                                            <img src="./assets/images/btn-delete.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 class="form-heading m-t-1 m-b-05">add options</h4>
+    <div class="add-options">
+        <div class="add-option">
+            <div class="add-option-header">
+                <h4>quantity</h4>
+            </div>
+            <div class="add-option-body">
+                <div class="options-table">
+                    <table class="table">
+                        <tr>
+                            <td>quarter</td>
+                            <td>$12.99</td>
+                            <td><button class="delete-option"><img src="./assets/images/cross.svg" alt=""></button></td>
+                        </tr>
+                        <tr>
+                            <td>half</td>
+                            <td>$15.99</td>
+                            <td><button class="delete-option"><img src="./assets/images/cross.svg" alt=""></button></td>
+                        </tr>
+                        <tr>
+                            <td>full</td>
+                            <td>$18.99</td>
+                            <td><button class="delete-option"><img src="./assets/images/cross.svg" alt=""></button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="add-option-footer">
+                <button class="btn-add-option">+ add quantity</button>
+            </div>
+        </div>
+        <div class="add-option">
+            <div class="add-option-header">
+                <h4>milk options</h4>
+            </div>
+            <div class="add-option-body">
+                <div class="options-table">
+                    <table class="table">
+                        <tr>
+                            <td>regular milk</td>
+                            <td>$12.99</td>
+                            <td><button class="delete-option"><img src="./assets/images/cross.svg" alt=""></button></td>
+                        </tr>
+                        <tr>
+                            <td>coconut milk</td>
+                            <td>$15.99</td>
+                            <td><button class="delete-option"><img src="./assets/images/cross.svg" alt=""></button></td>
+                        </tr>
+                        <tr>
+                            <td>soy milk</td>
+                            <td>$18.99</td>
+                            <td><button class="delete-option"><img src="./assets/images/cross.svg" alt=""></button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="add-option-footer">
+                <button class="btn-add-option">+ add milk options</button>
+            </div>
+        </div>
+    </div>
+    <div class="add-category">
+        <button class="btn-add-option">+ add option category</button>
+    </div>
+</div>

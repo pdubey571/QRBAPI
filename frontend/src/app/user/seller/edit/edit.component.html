@@ -1,0 +1,46 @@
+<div class="edit-profile">
+    <div class="edit-profile-header">
+        <div class="e-p-left">
+            <button class="btn-cancel">
+                <img src="./assets/images/cross.svg" alt="">
+            </button>
+            <h4>edit restaurant profile</h4>
+        </div>
+        <div class="e-p-right">
+            <button class="btn-correct">
+                <img src="./assets/images/tick-black.svg" alt="">
+            </button>
+        </div>
+    </div>
+    <div class="edit-profile-body">
+        <div class="edit-profile-inner">
+            <!-- <div class="edit-cover">
+                <label for="editCover">
+                    <img src="./assets/images/profile-cover.jpg" alt="">
+                    <input type="file" id="editCover" />
+                    <span class="edit-msg">change cover photo</span>
+                </label>
+            </div> -->
+            <div class="edit-profile-details">
+                <div class="p-tabs-header">
+                    <ul class="p-tabs">
+                        <li>
+                            <button class="btn btn-tab" (click)="tabSwitch('general')" [ngClass]="{'active': activeTab == 'general'}">cover page</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-tab" (click)="tabSwitch('contact')" [ngClass]="{'active': activeTab == 'contact'}">contact details</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-tab-content">
+                    <div class="tab-detail" *ngIf="activeTab == 'general'" [ngClass]="{'active': activeTab == 'general'}">
+                        <app-edit-general-details></app-edit-general-details>
+                    </div>
+                    <div class="tab-detail" *ngIf="activeTab == 'contact'" [ngClass]="{'active': activeTab == 'contact'}">
+                        <app-edit-contact-details></app-edit-contact-details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

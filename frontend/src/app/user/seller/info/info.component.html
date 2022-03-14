@@ -1,0 +1,240 @@
+
+<div class="landing has-fixed-menu info-page">
+    <div class="fixed-menu">
+        <div class="fz-menu">
+            <div class="fz-menu-inner">
+                <div class="fz-menu-left">
+                    <h3 class="business-name">business name</h3>
+                </div>
+                <div class="fz-menu-right">
+                    <div class="fz-menu-options">
+                        <div class="fz-menu-option">
+                            <a [routerLink]="[ '/user/seller/profile/edit']" class="btn-et">
+                                <img src="./assets/images/edit-name.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="fz-menu-option">
+                            <button class="btn-search" (click)="toggleSearch();">
+                                <img src="./assets/images/search.svg" alt="">
+                            </button>
+                            <div class="search-box" [ngClass]="{'active-search': activeSearch}">
+                                <input type="text" name="search" id="searchId">
+                                <button class="btn-clear" (click)="toggleSearch();">
+                                    <img src="./assets/images/search-clear.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="fz-menu-option">
+                            <button class="btn-hamburger" (click)="toggleMenu()">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button> 
+                            <span class="menu-overlay" *ngIf="openMenu" (click)="toggleMenu()"></span>
+                            <div class="users-menu" [ngClass]="{'active-menu': openMenu}">
+                                <div class="user-menu-header">
+                                    <div class="menu-header">                                        
+                                       <!--  <h4>Robert Fox</h4> -->
+                                        <p>(+1) 541-754-3010</p>
+                                        <span class="user-img">
+                                            <img src="./assets/images/user-img.png" alt="">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="user-menu-body">
+                                    <div class="user-inner-menu">
+                                        <h5 class="user-menu-heading">CUSTOMER OPTIONS</h5>
+                                        <ul class="user-menu-options">
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">business info</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/info.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">covid pass</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/pass.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">menu</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/venu.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                           <!--  <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">history</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/history.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                  
+                             <!--        <div class="user-inner-menu">
+                                        <h5 class="user-menu-heading">ADMIN OPTIONS</h5>
+                                        <ul class="user-menu-options">
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">menu editor</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/editor.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="[ '/path' ]">
+                                                    <h4 class="um-title">covid pass manager</h4>
+                                                    <span class="um-icon">
+                                                        <img src="./assets/images/pass-manager.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                                <div class="sp-row">
+                                    <div class="sp-col col100">
+                                        <a  class="btn btn-solid btn-dark btnheight">$45/mo</a>
+                                    </div>
+                                </div>
+                                <div class="user-menu-footer">
+                                    <ul class="user-menu-options">
+                                        <li>
+                                            <a [routerLink]="[ '/path' ]">
+                                                <h4 class="um-title">logout</h4>
+                                                <span class="um-icon">
+                                                    <img src="./assets/images/logout.svg" alt="">
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <p class="poweredby">powered by <span><img src="./assets/images/qrb.svg" alt=""></span></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info-page-inner">
+        <div class="info-details">
+            <div class="timings">
+                <p>mon - fri   |   9:00 am - 6:00 pm</p>
+                <p>sat - sun   |   9:00 am - 1:00 pm  &  2:00 pm - 6:00 pm</p>
+            </div>
+            <div class="info-desc">
+                <p>dio venenatis ut nibh integer tortor, gravida augue euismod faucibus. Aliquet elementum arcu leo rhoncus tortor, lorem et purus, neque. Tellus cursus nec quis ullamcorper molestie risus elit lectus sit. Tortor interdum sagittis ultrices diam. Pharetra mauris cursus etiam nibh diam. </p>
+            </div>
+            <ul class="contact-info-list">
+                <li>
+                    <a href="tel:+1 808-942-0505" target="_blank" title="+1 808-942-0505" class="contact-info">
+                        <span class="in-icon">
+                            <img src="./assets/images/mobile-icon.svg" alt="">
+                        </span>
+                        <h6>+1 808-942-0505</h6>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:contact@yogurstory.com" target="_blank" title="contact@yogurstory.com" class="contact-info">
+                        <span class="in-icon">
+                            <img src="./assets/images/email-icon.svg" alt="">
+                        </span>
+                        <h6>contact@yogurstory.com</h6>
+                    </a>
+                </li>
+                <li>
+                    <a href="www.yogurstory.com" target="_blank" title="www.yogurstory.com" class="contact-info">
+                        <span class="in-icon">
+                            <img src="./assets/images/web-icon.svg" alt="">
+                        </span>
+                        <h6>www.yogurstory.com</h6>
+                    </a>
+                </li>
+                <li>
+                    <div class="contact-info" title="815 ke’eaumoku st, honolulu, hi 96814, usa">
+                        <span class="in-icon">
+                            <img src="./assets/images/location-icon.svg" alt="">
+                        </span>
+                        <h6>815 ke’eaumoku st, honolulu, hi 96814, usa</h6>
+                    </div>
+                </li>
+            </ul>
+            <ul class="social-links">
+                <li>
+                    <a href="#!" class="social-link">
+                        <img src="./assets/images/insta.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="social-link">
+                        <img src="./assets/images/fb.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="social-link">
+                        <img src="./assets/images/youtube.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="social-link">
+                        <img src="./assets/images/yelp.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="covers-list-wrapper">
+            <ul class="covers-list">
+                <li>
+                    <label class="cover-item" for="coverbg">
+                        <input type="file" id="coverbg" />
+                        <img src="./assets/images/round-add.svg" alt="">
+                    </label>
+                </li>
+                <li>
+                    <a href="#!" class="cover-item">
+                        <img src="./assets/images/gallery001.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="cover-item">
+                        <img src="./assets/images/gallery002.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="cover-item">
+                        <img src="./assets/images/gallery003.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="cover-item">
+                        <img src="./assets/images/gallery004.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="cover-item">
+                        <img src="./assets/images/gallery001.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="cover-item">
+                        <img src="./assets/images/gallery002.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

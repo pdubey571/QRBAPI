@@ -1,0 +1,205 @@
+<div class="edit-profile">
+    <div class="edit-profile-header">
+        <div class="e-p-left">
+            <button class="btn-cancel">
+                <img src="./assets/images/cross.svg" alt="">
+            </button>
+            <h4>business hours</h4>
+        </div>
+        <div class="e-p-right">
+            <button class="btn-set">
+                <img src="./assets/images/plus-outlined.svg" alt="">
+                <span>add set</span>
+            </button>
+            <button class="btn-correct">
+                <img src="./assets/images/tick-black.svg" alt="">
+            </button>
+        </div>
+    </div>
+    <div class="edit-profile-body">
+        <div class="edit-profile-inner">
+            
+            <div class="business-sets">
+                <div class="business-set">
+                    <div class="business-set-header">
+                        <div class="business-set-header-col">
+                            <h4 class="set-heading">set 1</h4>
+                        </div>
+                        <div class="business-set-header-col">
+                            <button class="btn btn-trash">
+                                <img src="./assets/images/btn-bin.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="business-set-body">
+                        <div class="set-days">
+                            <div class="set-day">
+                                <label for="monday" class="set-day-btn">
+                                    <input type="checkbox" name="monday" id="monday" value="monday">
+                                    <span>M</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="tuesday" class="set-day-btn">
+                                    <input type="checkbox" name="tuesday" id="tuesday" value="tuesday">
+                                    <span>T</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="wednesday" class="set-day-btn">
+                                    <input type="checkbox" name="wednesday" id="wednesday" value="wednesday">
+                                    <span>W</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="thursday" class="set-day-btn">
+                                    <input type="checkbox" name="thursday" id="thursday" value="thursday">
+                                    <span>T</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="friday" class="set-day-btn">
+                                    <input type="checkbox" name="friday" id="friday" value="friday">
+                                    <span>F</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="saturday" class="set-day-btn">
+                                    <input type="checkbox" name="saturday" id="saturday" value="saturday">
+                                    <span>S</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="sunday" class="set-day-btn">
+                                    <input type="checkbox" name="sunday" id="sunday" value="sunday">
+                                    <span>S</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="set-timings">
+                            <div class="set-time">
+                                <div class="opening-time">
+                                    <label class="t-label">opening :</label>
+                                    <div class="s-select">
+                                        <ng-select [searchable]="false" [clearable]="false" [items]="timings"></ng-select>
+                                    </div>
+                                </div>
+                                <div class="d-separator">-</div>
+                                <div class="closing-time">
+                                    <label class="t-label">closing :</label>
+                                    <div class="s-select">
+                                        <ng-select [searchable]="false" [clearable]="false" [items]="timings"></ng-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addhours">
+                                <button class="btn-add-hours">
+                                    <span>+ add hours</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="business-set">
+                    <div class="business-set-header">
+                        <div class="business-set-header-col">
+                            <h4 class="set-heading">set 2</h4>
+                        </div>
+                        <div class="business-set-header-col">
+                            <button class="btn btn-trash">
+                                <img src="./assets/images/btn-bin.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="business-set-body">
+                        <div class="set-days">
+                            <div class="set-day">
+                                <label for="monday01" class="set-day-btn">
+                                    <input type="checkbox" name="monday" id="monday01" value="monday">
+                                    <span>M</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="tuesday01" class="set-day-btn">
+                                    <input type="checkbox" name="tuesday" id="tuesday01" value="tuesday">
+                                    <span>T</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="wednesday01" class="set-day-btn">
+                                    <input type="checkbox" name="wednesday" id="wednesday01" value="wednesday">
+                                    <span>W</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="thursday01" class="set-day-btn">
+                                    <input type="checkbox" name="thursday" id="thursday01" value="thursday">
+                                    <span>T</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="friday01" class="set-day-btn">
+                                    <input type="checkbox" name="friday" id="friday01" value="friday">
+                                    <span>F</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="saturday01" class="set-day-btn">
+                                    <input type="checkbox" name="saturday" id="saturday01" value="saturday">
+                                    <span>S</span>
+                                </label>
+                            </div>
+                            <div class="set-day">
+                                <label for="sunday01" class="set-day-btn">
+                                    <input type="checkbox" name="sunday" id="sunday01" value="sunday">
+                                    <span>S</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="set-timings">
+                            <div class="set-time">
+                                <div class="opening-time">
+                                    <label class="t-label">opening :</label>
+                                    <div class="s-select">
+                                        <ng-select [searchable]="false" [clearable]="false" [items]="timings"></ng-select>
+                                    </div>
+                                </div>
+                                <div class="d-separator">-</div>
+                                <div class="closing-time">
+                                    <label class="t-label">closing :</label>
+                                    <div class="s-select">
+                                        <ng-select [searchable]="false" [clearable]="false" [items]="timings"></ng-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="set-time">
+                                <div class="opening-time">
+                                    <label class="t-label">opening :</label>
+                                    <div class="s-select">
+                                        <ng-select [searchable]="false" [clearable]="false" [items]="timings"></ng-select>
+                                    </div>
+                                </div>
+                                <div class="d-separator">-</div>
+                                <div class="closing-time">
+                                    <label class="t-label">closing :</label>
+                                    <div class="s-select">
+                                        <ng-select [searchable]="false" [clearable]="false" [items]="timings"></ng-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addhours">
+                                <button class="btn-add-hours">
+                                    <span>+ add hours</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="business-hours-preview">
+                <p>mon - fri   |   9:00 am - 6:00 pm</p>
+                <p>sat - sun   |   9:00 am - 1:00 pm   &   2:00 pm - 6:00 pm</p>
+            </div>
+        </div>
+    </div>
+</div>

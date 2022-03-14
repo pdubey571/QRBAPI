@@ -1,0 +1,10 @@
+{
+    "development": {
+        "username": "",
+        "password": "",
+        "database": "",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "basePath": "http://15.206.16.178:3002/"
+}

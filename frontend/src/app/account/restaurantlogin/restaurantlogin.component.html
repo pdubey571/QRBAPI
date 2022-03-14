@@ -1,0 +1,65 @@
+<div class="t-wrapper">
+    <div class="t-header">
+        <div style="text-align: center;">           
+           <div> <h3>Welcome to qrb</h3>  </div>   
+           <div><span>easy covid tracing and dining</span></div>       
+        </div>
+        
+    </div>
+    <div class="t-body p-t-30 signup-wrap">
+        <div class="signup-content">
+            <div class="f-form">
+                <form novalidate>
+                    <div class="f-row">
+                        <div class="f-100">
+                            <div class="f-wrap">
+                                <div class="otp-phone">
+                                    <input type="text" class="f-field form-control" placeholder="enter mobile no. or email" value="">                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sp-row">
+                        <div class="sp-col col100">
+                            <a [routerLink]="[ '/verifypin' ]"  class="btn btn-solid btn-dark">continue</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <ul class="social-login-btns">
+                <li><hr></li>
+                <li id="line">or continue with</li>
+               <!--  <li>
+                    <button class="social-login-btn">
+                        <span>
+                            <img src="./assets/images/socialmail.svg" alt="">
+                        </span>
+                        <h6>continue with email</h6>
+                    </button>
+                </li> -->
+                <li>
+                    <div class="google-btn">
+                        <div class="google-icon-wrapper">
+                          <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                        </div>
+                        <p class="btn-text"><span>Sign in with google</span></p>
+                      </div>
+                </li>
+                <li>
+                    <div class="facebook-btn">
+                        <div class="facebook-icon-wrapper">
+                          <img class="facebook-icon" src="./assets/images/socialfacebook.svg"/>
+                        </div>
+                        <p class="btn-text"><span>Sign in with google</span></p>
+                      </div>
+                   <!--  <button class="social-login-btn">
+                        <span>
+                            <img src="./assets/images/socialfacebook.svg" alt="">
+                        </span>
+                        <h6>Continue with Facebook</h6>
+                    </button> -->
+                </li>                
+            </ul>
+        </div>
+    </div>
+</div>
