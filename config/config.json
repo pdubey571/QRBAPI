@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": "root@123",
-    "database": "qrbee",
-    "host": "localhost",
+    "username": "qrbeemasteradmin",
+    "password": "adminmasterqrbee1234",
+    "database": "master",
+    "host": "database-1.culhee4ul660.us-east-2.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "qrb",
-    "host": "localhost",
+    "username": "qrbeemasteradmin",
+    "password": "adminmasterqrbee1234",
+    "database": "master",
+    "host": "database-1.culhee4ul660.us-east-2.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "qrb",
-    "host": "localhost",
+    "username": "qrbeemasteradmin",
+    "password": "adminmasterqrbee1234",
+    "database": "master",
+    "host": "database-1.culhee4ul660.us-east-2.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
