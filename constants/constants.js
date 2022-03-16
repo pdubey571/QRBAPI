@@ -12,7 +12,7 @@ const messages={
 
 const twilloParams={
     ACCOUNT_SID:"ACc99892c43cd5f1460aaab1e1a9f9eda2",
-    AUTH_TOKEN:"6b6f9560660a918276868ddac689dcb8",
+    AUTH_TOKEN: "256ede9fbde796bfadf8a651fd4de952",//"6b6f9560660a918276868ddac689dcb8",
     SERVICE_SID:"MG9e10a0423a145df32fb08fb41603e2ae",
 };
 
