@@ -89,7 +89,7 @@ async function validatePin(req, res, next) {
         errors.email = "Email field is required";
     } else if (isEmpty(req.body.pin)) {
         errors.pin = "Pin field is reuired";
-    } 
+    }
     // else if (!Validator.isEmail(req.body.email)) {
     //     errors.email = "Email is not valid";
     // }
@@ -103,16 +103,23 @@ async function validatePin(req, res, next) {
     if (pin === req.body.pin) {
         await client.del(req.body.email.toString());
         try {
-            var user = await db.user.findOne({
-                where: {
-                    email: req.body.email,
-                    $or: [{
-                        phone_number: {
-                            $eq: req.body.email,
-                        }
-                    }]
-                }
+
+            var user = null;
+            let resp = await db.sequelize.query("select * from users where email=? or phone_number=?", {
+                type: "SELECT",
+                replacements: [req.body.email, req.body.email]
             });
+           user=resp.length && resp[0];
+            // await db.user.findOne({
+            //     where: {
+            //         email: req.body.email,
+            //         $or: [{
+            //             phone_number: {
+            //                 $eq: req.body.email,
+            //             }
+            //         }]
+            //     }
+            // });
             if (user) {
                 res.status(200).json({
                     error: false,
@@ -120,16 +127,16 @@ async function validatePin(req, res, next) {
                     data: user,
                 });
             } else {
-    
+
                 res.status(200).json({
                     error: false,
                     message: userMessages.messages.otp_validate,
                 });
             }
         } catch (error) {
-            console.log("Error while matching otp with redis.",error);
+            console.log("Error while matching otp with redis.", error);
         }
-       
+
     } else {
         res.status(400).json({
             error: false,
