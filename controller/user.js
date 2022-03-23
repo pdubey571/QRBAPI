@@ -109,7 +109,7 @@ async function validatePin(req, res, next) {
                 type: "SELECT",
                 replacements: [req.body.email, req.body.email]
             });
-           user=resp.length && resp[0];
+            user = resp.length && resp[0];
             // await db.user.findOne({
             //     where: {
             //         email: req.body.email,
@@ -192,60 +192,57 @@ async function getRestaurantDeails(req, res, next) {
 
 // const User = require("../models/Users");
 async function userRegistration(req, res, next) {
+    try {
+        var user = null;
+        let resp = await db.sequelize.query("select * from users where email=? or phone_number=?", {
+            type: "SELECT",
+            replacements: [req.body.email, req.body.email]
+        });
+        user = resp.length && resp[0];
+        if (user) {
+            return res.status(409).json({
+                'error_code': 102,
+                'status': false,
+                'errors': 'already registered',
+            })
+        }
 
-    const { errors, isValid } = validateRegisterInput.validateRegisterInput(req.body);
-    if (!isValid) {
+        req.body.status = 0;     //For testing purpose
+        var result = await db.user.create(req.body);
+        if (result) {
+            res.status(200).json({
+                error: "false",
+                status: "Success",
+                message: 'User account is successfully created!',
+                data: result
+            })
+        } else {
+            return res.status(500).json({
+                'error_code': 109,
+                'status': false,
+                'errors': 'User account not created. Please try again'
+            })
+        }
+    } catch (error) {
+        return res.status(500).json(
+            {
+                error_code: 101,
+                status: false,
+                errors: `${error}`
+            }
+        )
+    }
+    /*
+     const { errors, isValid } = validateRegisterInput.validateRegisterInput(req.body);
+     if (!isValid) {
         return res.status(400).json({
             'error_code': 101,
             'status': false,
             'errors': errors
         });
     } else {
-        try {
-            var user = await db.user.findOne({
-                where: {
-                    email: req.body.email
-                }
-            });
-            if (user) {
-                return res.status(409).json({
-                    'error_code': 102,
-                    'status': false,
-                    'errors': 'Email id already configured',
-                })
-            }
-            var user = await db.user.findOne({
-                where: {
-                    phone_number: req.body.phone_number
-                }
-            });
-
-            req.body.status = 0;     //For testing purpose
-            var result = await db.user.create(req.body);
-            if (result) {
-                res.status(200).json({
-                    error: "false",
-                    status: "Success",
-                    message: 'User account is successfully created!',
-                    data: result
-                })
-            } else {
-                return res.status(500).json({
-                    'error_code': 109,
-                    'status': false,
-                    'errors': 'User account not created. Please try again'
-                })
-            }
-        } catch (error) {
-            return res.status(500).json(
-                {
-                    error_code: 101,
-                    status: false,
-                    errors: `${error}`
-                }
-            )
-        }
-    }
+       
+    }*/
 }
 
 
