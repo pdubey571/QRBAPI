@@ -148,7 +148,7 @@ async function validatePin(req, res, next) {
 async function getRestaurantDeails(req, res, next) {
     try {
         const { userId } = req.query;
-        let resp = await db.sequelize.query(`select * from users us inner join business_sets bs on us.id=bs.restaurent_id where us.id=?`, { replacements: [userId], type: "SELECT" });
+        let resp = await db.sequelize.query(`select * from users us left join business_sets bs on us.id=bs.restaurent_id where us.id=?`, { replacements: [userId], type: "SELECT" });
 
 
         const userData = {};
@@ -179,7 +179,7 @@ async function getRestaurantDeails(req, res, next) {
         } else {
             res.status(404).send({
                 status: false,
-                errors: error
+                errors: "Not Found!"
             })
         }
     } catch (err) {
