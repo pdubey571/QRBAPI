@@ -18,22 +18,33 @@ const HttpError = require('../errors/HttpError');
 const uploadFolder = path.join(__dirname, '../', "public", "icons");
 module.exports = {
     async getCategoryList(req, res, next) {
-        let resp = await db.item_categories.findAll({
-            where: {
-                parent_category: 0, status: 1
+        try {
+            let resp = await db.item_categories.findAll({
+                where: {
+                    parent_category: 0, status: 1, restaurant_id: req.query.restaurant_id
+                }
+            });
+            if (resp.length) {
+                res.send({
+                    status: true,
+                    data: resp
+                })
+            } else {
+                res.status(404).send({
+                    status: false,
+                    errors: {
+                        message: "Not found!",
+                        stack: "getCategoryList()"
+                    }
+                })
             }
-        });
-        if (resp.length) {
-            res.send({
-                status: true,
-                data: resp
-            })
-        } else {
-            res.status(404).send({
+        } catch (error) {
+            res.status(500).send({
                 status: false,
                 errors: error
             })
         }
+        
 
     },
     async getCustmizationList(req, res, next) {
@@ -71,7 +82,10 @@ module.exports = {
             } else {
                 res.status(404).send({
                     status: false,
-                    errors: error
+                    errors: {
+                        message:"Not found!",
+                        stack:"getCategoryById()"
+                    }
                 })
             }
         } catch (err) {
@@ -99,7 +113,7 @@ module.exports = {
 
             const resp = await db.item_categories.findOne({
                 where: {
-                    category_name: req.body.category_name
+                    category_name: req.body.category_name,restaurant_id:req.body.restaurant_id
                 }
             });
             if (resp) {
@@ -114,8 +128,8 @@ module.exports = {
             console.log('Error', err);
         }
 
-        {
-            const result = await db.item_categories.create(req.body);
+        try {
+             const result = await db.item_categories.create(req.body);
             if (result) {
                 res.status(200).json({
                     error: "false",
@@ -132,7 +146,11 @@ module.exports = {
                     data: result,
                 });
             }
+        } catch (error) {
+            console.log('Error', err);
         }
+           
+        
     },
 
     async addNewCustmization(req, res, next) {
@@ -369,41 +387,34 @@ module.exports = {
 
                 try {
 
-                    if (files.item_image.length) {
-
-                        for (let i = 0; i < files.item_image.length; i++) {
-                            const type = files.item_image[i].type.split("/").pop();
-                            file_name[i] = encodeURIComponent('icon-' + new Date().getTime()) + Math.floor((Math.random() * 100) + 1) + '.' + type;
-
-
-                            const file = files.item_image[i];
-                            const isValid = isFileValid(file);
-
-                            if (!isValid) {
-                                // throes error if file isn't valid
-                                return res.status(400).json({
-                                    status: "Fail",
-                                    message: "The file type is not a valid type",
-                                });
-                            }
-                            try {
-                                // renames the file in the directory
-                                fs.renameSync(file.path, path.join(uploadFolder, file_name[i]));
-                            } catch (error) {
-                                console.log(error);
-                            }
-
-                            try {
-                                // stores the fileName in the database
-                                const newFile = await File.create({
-                                    name: `files/${file_name[i]}`,
-                                });
-
-                            } catch (error) {
-                                console.log(`File Upload Error ${file_name[i]} `, error);
-                            }
-                        }
+                    if (typeof files.item_image == 'object') {
+                        files.item_image = [files.item_image];
                     }
+                    for (let i = 0; i < files.item_image.length; i++) {
+
+                        const type = files.item_image[i].type.split("/").pop();
+                        file_name[i] = encodeURIComponent('icon-' + new Date().getTime()) + Math.floor((Math.random() * 100) + 1) + '.' + type;
+
+
+                        const file = files.item_image[i];
+                        const isValid = isFileValid(file);
+
+                        if (!isValid) {
+                            // throes error if file isn't valid
+                            return res.status(400).json({
+                                status: "Fail",
+                                message: "The file type is not a valid type",
+                            });
+                        }
+                        try {
+                            // renames the file in the directory
+                            fs.renameSync(file.path, path.join(uploadFolder, file_name[i]));
+                        } catch (error) {
+                            console.log(error);
+                        }
+
+                    }
+                  
                     var item = await db.items.findOne({
                         where: {
                             name: incommingFieldData.name,
@@ -583,7 +594,7 @@ module.exports = {
             });
         }
 
-        const list = await db.item_categories.findAll({ where: { parent_category: 0, status: 1 } });
+        const list = await db.item_categories.findAll({ where: { parent_category: 0, status: 1,restaurant_id:req.body.restaurant_id } });
 
         let resultArray = list.map(cat => {
             return {

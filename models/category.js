@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     category_description: DataTypes.STRING,
     parent_category: DataTypes.INTEGER,
     status: DataTypes.INTEGER,
+    restaurant_id:DataTypes.INTEGER
   }, {
     timestamps:true,
     createdAt: 'create_ts',
